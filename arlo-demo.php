@@ -17,23 +17,34 @@ if ( ! defined( 'WPINC' ) ) {
 	die;
 }
 
+/*
+ * add_action https://developer.wordpress.org/reference/functions/add_action/
+ */
 add_action(
+        /*
+         *  hook: wp_enqueue_scripts https://developer.wordpress.org/reference/hooks/wp_enqueue_scripts/
+         */
 'wp_enqueue_scripts',
 	/**
-	 * loads up arlo script into wp header
+	 * anonymous function(): loads up arlo script into wp header
 	 */
 	function () {
+	    /*
+	     *  wp_enqueue_script https://developer.wordpress.org/reference/functions/wp_enqueue_script/
+	     */
 		wp_enqueue_script( 'arlo', 'https://connect.arlocdn.net/jscontrols/1.0/init.js', array(), '1.0', false );
 	}
 );
 
-
-
+/*
+ *  add_shortcode https://developer.wordpress.org/reference/functions/add_shortcode/
+ */
 add_shortcode(
  'arlo_demo',
 	/**
-     * creates a shortcode [arlo_demo]
+     * anonymous function():
      *
+     * creates a shortcode [arlo_demo]
      * outputs the arlo demo code as per https://developer.arlo.co/doc/webcontrols/index
      *
 	 * @return string
