@@ -9,19 +9,35 @@ Author: alan fuller
 Author URI: https://fullworks.net
 License: GPL2
 */
+
+/*
+ *  stops the plugin being called directly
+ */
 if ( ! defined( 'WPINC' ) ) {
 	die;
 }
 
 add_action(
-	'wp_enqueue_scripts',
+'wp_enqueue_scripts',
+	/**
+	 * loads up arlo script into wp header
+	 */
 	function () {
 		wp_enqueue_script( 'arlo', 'https://connect.arlocdn.net/jscontrols/1.0/init.js', array(), '1.0', false );
 	}
 );
 
+
+
 add_shortcode(
-	'arlo_demo',
+ 'arlo_demo',
+	/**
+     * creates a shortcode [arlo_demo]
+     *
+     * outputs the arlo demo code as per https://developer.arlo.co/doc/webcontrols/index
+     *
+	 * @return string
+	 */
 	function () {
 		ob_start);
 ?>
