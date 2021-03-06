@@ -39,7 +39,7 @@ add_shortcode(
 	 * @return string
 	 */
 	function () {
-		ob_start);
+		ob_start();
 ?>
         <div id="upcoming-events-control1"></div>
         <div id="upcoming-events-control2"></div>
